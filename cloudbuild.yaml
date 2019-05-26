@@ -1,6 +1,8 @@
 steps:
 # Test
 - name: 'gcr.io/cloud-builders/npm'
+  args: ['install', '-g', 'mocha']
+- name: 'gcr.io/cloud-builders/npm'
   args: ['run', 'test']
 
 # Image build
