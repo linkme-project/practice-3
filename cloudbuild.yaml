@@ -1,7 +1,10 @@
 steps:
+# Download dependancies
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install']
+
 # Test
 - name: 'gcr.io/cloud-builders/npm'
-  args: ['install', '-g', 'mocha']
   args: ['run', 'test']
 
 # Image build
@@ -14,7 +17,7 @@ steps:
 
 # Deploy
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: ['set', 'image', 'deployment/my-deployment', 'practice-3-sha256=gcr.io/linkme-example/practice-3:0.1']
+  args: ['set', 'image', 'deployment/my-deployment', 'practice-2-sha256=gcr.io/linkme-example/practice-3:0.1']
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=standard-cluster-1'
