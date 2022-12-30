@@ -15,7 +15,7 @@
     "morgan": "~1.9.0"
   },
   "devDependencies": {
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "node-mocks-http": "^1.7.5",
     "should": "^13.2.3",
     "sinon": "^7.3.2"
